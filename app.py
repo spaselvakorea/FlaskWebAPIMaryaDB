@@ -166,10 +166,6 @@ class siteResource(Resource):
         api.abort(403)
 
 if __name__ == '__main__':
-    import os
     HOST = os.environ.get('SERVER_HOST', 'localhost')
-    try:
-        PORT = int(os.environ.get('SERVER_PORT', '5555'))
-    except ValueError:
-        PORT = 5555
+    PORT = 8086
     app.run(HOST, PORT)

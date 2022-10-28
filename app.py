@@ -25,6 +25,17 @@ wsgi_app = app.wsgi_app
 config = configparser.ConfigParser()
 config.read('config.ini')
 
+class create_dict(dict): 
+  
+    # __init__ function 
+    def __init__(self): 
+        self = dict() 
+          
+    # Function to add key:value 
+    def add(self, key, value): 
+        self[key] = value
+
+
 @api.route('/sites')
 class sitesRoot(Resource):
     def get(self):
@@ -55,7 +66,14 @@ class sitesRoot(Resource):
         cur.close()
         conn.close()
     
-        return jsonify(rows)
+        #return jsonify(rows)
+        mydict = create_dict()
+        for row in rows:
+            mydict.add(row[0],({"no":row[0], "username":row[1], "site_name":row[2], "site_url":row[3], "screenshot":row[4], "reg_date":row[5], "last_chk_date":row[6], "similarity":row[7], "defaced":row[8], "send_email":row[9], "threshold":row[10], "reputation_result":row[11], "ai_result":row[12], "ai_score":row[13], "analysis_detail":json.loads(row[14])}))
+        
+        json_array = [value for key, value in mydict.items()]
+        return jsonify(json_array)
+        
 
 @api.route('/site_contents')
 class sitesRoot(Resource):
@@ -87,7 +105,14 @@ class sitesRoot(Resource):
         cur.close()
         conn.close()
     
-        return jsonify(rows)
+        #return jsonify(rows)
+        mydict = create_dict()
+        for row in rows:
+            mydict.add(row[15],({"no":row[0], "username":row[1], "site_name":row[2], "site_url":row[3], "screenshot":row[4], "reg_date":row[5], "last_chk_date":row[6], "similarity":row[7], "defaced":row[8], "send_email":row[9], "threshold":row[10], "reputation_result":row[11], "ai_result":row[12], "ai_score":row[13], "analysis_detail":json.loads(row[14]), "site_contents_no":row[15], "username":row[16], "site_no":row[17], "filetype":row[18], "pathname":row[19], "check_date":row[20], "is_malware":row[21], "reputation_result":row[22], "ai_result":row[23], "ai_score":row[24], "site_contents_analysis_detail":json.loads(row[25])}))
+
+        json_array = [value for key, value in mydict.items()]
+        return jsonify(json_array)
+
 
 @api.route('/sites/<id>')
 @api.doc(params={'id': 'An Site NO'})
@@ -121,7 +146,14 @@ class siteResource(Resource):
         cur.close()
         conn.close()
     
-        return jsonify(rows)
+        #return jsonify(rows)
+        mydict = create_dict()
+        for row in rows:
+            mydict.add(row[0],({"no":row[0], "username":row[1], "site_name":row[2], "site_url":row[3], "screenshot":row[4], "reg_date":row[5], "last_chk_date":row[6], "similarity":row[7], "defaced":row[8], "send_email":row[9], "threshold":row[10], "reputation_result":row[11], "ai_result":row[12], "ai_score":row[13], "analysis_detail":json.loads(row[14])}))
+
+        json_array = [value for key, value in mydict.items()]
+        return jsonify(json_array)
+
 
     @api.response(403, 'Not Authorized')
     def post(self, id):
@@ -158,8 +190,15 @@ class siteResource(Resource):
         # Clean up
         cur.close()
         conn.close()
-    
-        return jsonify(rows)
+        
+        #return jsonify(rows)
+        mydict = create_dict()
+        for row in rows:
+            mydict.add(row[15],({"no":row[0], "username":row[1], "site_name":row[2], "site_url":row[3], "screenshot":row[4], "reg_date":row[5], "last_chk_date":row[6], "similarity":row[7], "defaced":row[8], "send_email":row[9], "threshold":row[10], "reputation_result":row[11], "ai_result":row[12], "ai_score":row[13], "analysis_detail":json.loads(row[14]), "site_contents_no":row[15], "username":row[16], "site_no":row[17], "filetype":row[18], "pathname":row[19], "check_date":row[20], "is_malware":row[21], "reputation_result":row[22], "ai_result":row[23], "ai_score":row[24], "site_contents_analysis_detail":json.loads(row[25])}))
+
+        json_array = [value for key, value in mydict.items()]
+        return jsonify(json_array)
+
 
     @api.response(403, 'Not Authorized')
     def post(self, id):

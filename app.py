@@ -69,7 +69,7 @@ class sitesRoot(Resource):
         #return jsonify(rows)
         mydict = create_dict()
         for row in rows:
-            mydict.add(row[0],({"no":row[0], "username":row[1], "site_name":row[2], "site_url":row[3], "screenshot":row[4], "reg_date":row[5], "last_chk_date":row[6], "similarity":row[7], "defaced":row[8], "send_email":row[9], "threshold":row[10], "reputation_result":row[11], "ai_result":row[12], "ai_score":row[13], "analysis_detail":json.loads(row[14])}))
+            mydict.add(row[0],({"no":( row[0] or ""), "username":( row[1] or ""), "site_name":( row[2] or ""), "site_url":( row[3] or ""), "screenshot":( row[4] or ""), "reg_date":( row[5] or ""), "last_chk_date":( row[6] or ""), "similarity":( row[7] or ""), "defaced":( row[8] or ""), "send_email":( row[9] or ""), "threshold":( row[10] or ""), "reputation_result":( row[11] or ""), "ai_result":( row[12] or ""), "ai_score":( row[13] or ""), "analysis_detail":json.loads(( row[14] or ""))}))
         
         json_array = [value for key, value in mydict.items()]
         return jsonify(json_array)
@@ -108,7 +108,7 @@ class sitesRoot(Resource):
         #return jsonify(rows)
         mydict = create_dict()
         for row in rows:
-            mydict.add(row[15],({"no":row[0], "username":row[1], "site_name":row[2], "site_url":row[3], "screenshot":row[4], "reg_date":row[5], "last_chk_date":row[6], "similarity":row[7], "defaced":row[8], "send_email":row[9], "threshold":row[10], "reputation_result":row[11], "ai_result":row[12], "ai_score":row[13], "analysis_detail":json.loads(row[14]), "site_contents_no":row[15], "username":row[16], "site_no":row[17], "filetype":row[18], "pathname":row[19], "check_date":row[20], "is_malware":row[21], "reputation_result":row[22], "ai_result":row[23], "ai_score":row[24], "site_contents_analysis_detail":json.loads(row[25])}))
+            mydict.add(row[15],({"no":( row[0] or ""), "username":( row[1] or ""), "site_name":( row[2] or ""), "site_url":( row[3] or ""), "screenshot":( row[4] or ""), "reg_date":( row[5] or ""), "last_chk_date":( row[6] or ""), "similarity":( row[7] or ""), "defaced":( row[8] or ""), "send_email":( row[9] or ""), "threshold":( row[10] or ""), "reputation_result":( row[11] or ""), "ai_result":( row[12] or ""), "ai_score":( row[13] or ""), "analysis_detail":json.loads(( row[14] or "{}")), "site_contents_no":( ( row[15] or "") or ""), "username":( row[16] or ""), "site_no":( row[17] or ""), "filetype":( row[18] or ""), "pathname":( row[19] or ""), "check_date":( row[20] or ""), "is_malware":( row[21] or ""), "reputation_result":( row[22] or ""), "ai_result":( row[23] or ""), "ai_score":( row[24] or ""), "site_contents_analysis_detail":json.loads(( row[25] or "{}"))}))
 
         json_array = [value for key, value in mydict.items()]
         return jsonify(json_array)
@@ -149,7 +149,7 @@ class siteResource(Resource):
         #return jsonify(rows)
         mydict = create_dict()
         for row in rows:
-            mydict.add(row[0],({"no":row[0], "username":row[1], "site_name":row[2], "site_url":row[3], "screenshot":row[4], "reg_date":row[5], "last_chk_date":row[6], "similarity":row[7], "defaced":row[8], "send_email":row[9], "threshold":row[10], "reputation_result":row[11], "ai_result":row[12], "ai_score":row[13], "analysis_detail":json.loads(row[14])}))
+            mydict.add(row[0],({"no":( row[0] or ""), "username":( row[1] or ""), "site_name":( row[2] or ""), "site_url":( row[3] or ""), "screenshot":( row[4] or ""), "reg_date":( row[5] or ""), "last_chk_date":( row[6] or ""), "similarity":( row[7] or ""), "defaced":( row[8] or ""), "send_email":( row[9] or ""), "threshold":( row[10] or ""), "reputation_result":( row[11] or ""), "ai_result":( row[12] or ""), "ai_score":( row[13] or ""), "analysis_detail":json.loads(( row[14] or ""))}))
 
         json_array = [value for key, value in mydict.items()]
         return jsonify(json_array)
@@ -194,7 +194,7 @@ class siteResource(Resource):
         #return jsonify(rows)
         mydict = create_dict()
         for row in rows:
-            mydict.add(row[15],({"no":row[0], "username":row[1], "site_name":row[2], "site_url":row[3], "screenshot":row[4], "reg_date":row[5], "last_chk_date":row[6], "similarity":row[7], "defaced":row[8], "send_email":row[9], "threshold":row[10], "reputation_result":row[11], "ai_result":row[12], "ai_score":row[13], "analysis_detail":json.loads(row[14]), "site_contents_no":row[15], "username":row[16], "site_no":row[17], "filetype":row[18], "pathname":row[19], "check_date":row[20], "is_malware":row[21], "reputation_result":row[22], "ai_result":row[23], "ai_score":row[24], "site_contents_analysis_detail":json.loads(row[25])}))
+            mydict.add(row[15],({"no":( row[0] or ""), "username":( row[1] or ""), "site_name":( row[2] or ""), "site_url":( row[3] or ""), "screenshot":( row[4] or ""), "reg_date":( row[5] or ""), "last_chk_date":( row[6] or ""), "similarity":( row[7] or ""), "defaced":( row[8] or ""), "send_email":( row[9] or ""), "threshold":( row[10] or ""), "reputation_result":( row[11] or ""), "ai_result":( row[12] or ""), "ai_score":( row[13] or ""), "analysis_detail":json.loads(( row[14] or "{}")), "site_contents_no":( row[15] or ""), "username":( row[16] or ""), "site_no":( row[17] or ""), "filetype":( row[18] or ""), "pathname":( row[19] or ""), "check_date":( row[20] or ""), "is_malware":( row[21] or ""), "reputation_result":( row[22] or ""), "ai_result":( row[23] or ""), "ai_score":( row[24] or ""), "site_contents_analysis_detail":json.loads(( row[25] or "{}"))}))
 
         json_array = [value for key, value in mydict.items()]
         return jsonify(json_array)

@@ -69,7 +69,7 @@ class sitesRoot(Resource):
         #return jsonify(rows)
         mydict = create_dict()
         for row in rows:
-            mydict.add(row[0],({"no":( row[0] or ""), "username":( row[1] or ""), "site_name":( row[2] or ""), "site_url":( row[3] or ""), "screenshot":( row[4] or ""), "reg_date":( row[5] or ""), "last_chk_date":( row[6] or ""), "similarity":( row[7] or ""), "defaced":( row[8] or ""), "send_email":( row[9] or ""), "threshold":( row[10] or ""), "reputation_result":( row[11] or ""), "ai_result":( row[12] or ""), "ai_score":( row[13] or ""), "analysis_detail":json.loads(( row[14] or ""))}))
+            mydict.add(row[0],({"no":( row[0] or ""), "username":( row[1] or ""), "site_name":( row[2] or ""), "site_url":( row[3] or ""), "screenshot":( row[4] or ""), "reg_date":( row[5] or ""), "last_chk_date":( row[6] or ""), "similarity":( row[7] or ""), "defaced":( row[8] or ""), "send_email":( row[9] or ""), "threshold":( row[10] or ""), "reputation_result":( row[11] or ""), "ai_result":( row[12] or ""), "ai_score":( row[13] or ""), "analysis_detail":json.loads(( row[14] or "{}"))}))
         
         json_array = [value for key, value in mydict.items()]
         return jsonify(json_array)
@@ -149,7 +149,7 @@ class siteResource(Resource):
         #return jsonify(rows)
         mydict = create_dict()
         for row in rows:
-            mydict.add(row[0],({"no":( row[0] or ""), "username":( row[1] or ""), "site_name":( row[2] or ""), "site_url":( row[3] or ""), "screenshot":( row[4] or ""), "reg_date":( row[5] or ""), "last_chk_date":( row[6] or ""), "similarity":( row[7] or ""), "defaced":( row[8] or ""), "send_email":( row[9] or ""), "threshold":( row[10] or ""), "reputation_result":( row[11] or ""), "ai_result":( row[12] or ""), "ai_score":( row[13] or ""), "analysis_detail":json.loads(( row[14] or ""))}))
+            mydict.add(row[0],({"no":( row[0] or ""), "username":( row[1] or ""), "site_name":( row[2] or ""), "site_url":( row[3] or ""), "screenshot":( row[4] or ""), "reg_date":( row[5] or ""), "last_chk_date":( row[6] or ""), "similarity":( row[7] or ""), "defaced":( row[8] or ""), "send_email":( row[9] or ""), "threshold":( row[10] or ""), "reputation_result":( row[11] or ""), "ai_result":( row[12] or ""), "ai_score":( row[13] or ""), "analysis_detail":json.loads(( row[14] or "{}"))}))
 
         json_array = [value for key, value in mydict.items()]
         return jsonify(json_array)
